@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 function Welcome() {
-    return <h1>Hello world</h1>
+    return <h1>Hello everybody</h1>
 }
 
 class SuperWelcome extends Component {
     render() {
-        return <h1>Hello world</h1>
+        return <h1>Hello world!!!</h1>
     }
 } 
 
