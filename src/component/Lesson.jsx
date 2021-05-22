@@ -1,22 +1,55 @@
 import React, { Component } from 'react';
 
-function Welcome() {
-    return <h1>Hello everybody</h1>
-}
 
-class SuperWelcome extends Component {
-    render() {
-        return <h1>Hello world!!!</h1>
+// Old
+// class CounterButton extends Component {
+//     constructor(props) {
+//         super(props);
+
+//         this.state = {
+//             counter: 0,
+//         }
+//     }
+// };
+
+class CounterButton extends Component{
+    state = {
+
+        counter: 0,
     }
-} 
 
-function Lesson() {
-    return(
-        <div>
-            <Welcome />
-            <SuperWelcome />
-        </div>
-    )
+    handleClick = () => {
+        this.setState(({counter}) =>( 
+        {
+            counter: ++counter,
+        }
+        ))
+    }
+
+
+
+    render() {
+        const { counter } = this.state;
+
+        return (
+            <div>
+                <div>{counter}</div>
+                <button onClick={this.handleClick}> +1 </button>
+            </div>
+            
+        );
+    }
+
 }
 
-export default Lesson;
+
+
+// function Lesson() {
+//     return(
+//         <div>
+//            <button> Супер кнопка</button>
+//         </div>
+//     )
+// };
+
+export default CounterButton;
